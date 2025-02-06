@@ -7,6 +7,9 @@ export default defineNuxtConfig({
       database: true,
     }
   },
+  hub: {
+    database: true,
+  },
   modules: [
     '@pinia/nuxt',
   ]
