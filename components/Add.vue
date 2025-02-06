@@ -1,5 +1,8 @@
 <template>
-    <input type="title" v-model="title"><button @click="add()">add</button>
+    <form @submit.prevent="add()">
+        <input type="title" v-model="title">
+        <button type="submit">add</button>
+    </form>
 </template>
 
 <script setup>
@@ -15,5 +18,6 @@ const add = async () => {
     };
     const res = await $fetch('api/add', options);
     todosStore.setTodos();
+    title.value = '';
 }
 </script>
